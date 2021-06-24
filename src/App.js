@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { Main, Form, Keypad, Button, ButtonFun, ButtonOpe } from './app_styles'
+import { Main,  Form, Keypad, Button, ButtonCol, ButtonBor, ButtonFun, ButtonOpe } from './app_styles'
 function App() {
-
   
   const [result, setResult] = useState ("");
   const [operacion, setOperacion] = useState ("");
   
+  
   const handleClick=(e)=> {
-      setOperacion(operacion.concat(e.target.name))     
+      setOperacion(operacion.concat(e.target.name))   
   }
-
+  
   const clear = () => {
     setOperacion("");
     setResult("");
@@ -18,6 +18,13 @@ function App() {
   const backspace = () => {
     setOperacion(operacion.slice(0, operacion.length -1))
   }
+
+  const mudaColor = ()=> {
+    alert('função não implementada, estará em serviço muito em breve');
+    
+    return
+    
+}
 
   const calculate = () => {
     try {
@@ -28,18 +35,22 @@ function App() {
   }
           return (
             <Main>
+              
                   <Form>
                       <input
+                         
                           type="text"
                           value={String(result)}/> 
                         <input
+                           
                           type="text"
                           value={String(operacion)}/>   
                   </Form>
+                  
               <Keypad>
-                  <ButtonOpe onClick={clear}>AC</ButtonOpe>
-                  <ButtonOpe onClick={backspace}>BS</ButtonOpe>
-                  <Button name=" "  onClick={handleClick}></Button>
+                  <ButtonBor onClick={clear}>AC</ButtonBor>
+                  <Button onClick={backspace}>&#9003;</Button>
+                  <ButtonCol name="CC"  onClick={mudaColor}>&#9681;</ButtonCol>
                   <ButtonFun name="/"  onClick={handleClick}>/</ButtonFun>
                   <Button name="7"  onClick={handleClick}>7</Button>
                   <Button name="8"  onClick={handleClick}>8</Button>
@@ -58,6 +69,7 @@ function App() {
                   <Button name=" "  onClick={handleClick}> </Button>
                   <ButtonOpe onClick={calculate}>=</ButtonOpe>
               </Keypad>
+              
             </Main>
             );
                 

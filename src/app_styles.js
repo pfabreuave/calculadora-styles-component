@@ -1,17 +1,31 @@
 import styled from 'styled-components'
 
+export const Mudarb = styled.div
+
+`
+    --primary-color= #2f2a3a;
+    --bg-color= #ffffff;
+    --secundary-color= #2f2a3a;
+
+[data-theme="dark"] {
+
+    --primary-color= #ffffff;
+    --bg-color= #ffffff;
+    --secundary-color= #ffffff;
+}
+`
+
 export const Main = styled.div
 `
-    top: 10%;
+    top: 15%;
     left: 50%;
     position: absolute;
-    transform: traslate(-50% -50%);
-    margin: 0 auto;
-    width: 256px;
+    height: 450px;
+    width: 240px;
     text-align: center;
-    border: 10px solid #101116;
-    border-radius: 5px;
+    border: none;
     background: #2f2a3a;
+    
     
 
 `
@@ -24,16 +38,16 @@ export const Form = styled.form
         border: 0px;
         color: #fff;
         text-align: right;
-        font-size: 30px;
+        font-size: 35px;
         font-weight: 500;
         letter-spacing: 1px;
-        margin-top: 45px;
+        margin-top: 75px;
         margin-left: -10px;
 
         
     }
         input + input{
-            font-size: 12px;
+            font-size: 10px;
             color: #7d5dff;
             height: 15px;
             margin-bottom: 25px;
@@ -59,6 +73,30 @@ export const Button = styled.button
     color: #f1f1f1;
 
 `
+
+export const ButtonCol = styled.button
+`
+    margin: 5px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #2f2a3a;
+    color: #f1f1f1;
+
+`
+
+export const ButtonBor = styled.button
+`
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #2f2a3a;
+    color: #7d5dff;
+
+`
+
 export const ButtonFun = styled(Button)
 `
     background: #bfbfc1;
