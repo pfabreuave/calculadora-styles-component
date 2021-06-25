@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-export const Mudarb = styled.div
-
-`
-    --primary-color= #2f2a3a;
-    --bg-color= #ffffff;
-    --secundary-color= #2f2a3a;
-
-[data-theme="dark"] {
-
-    --primary-color= #ffffff;
-    --bg-color= #ffffff;
-    --secundary-color= #ffffff;
+export const lightTheme = {
+    background: '#f4f4f4',
+    color: '#333',
 }
-`
+
+
+export const darkTheme = {
+    background: '#2f2a3a',
+    color: '#f4f4f4',
+}
 
 export const Main = styled.div
 `
@@ -24,26 +20,22 @@ export const Main = styled.div
     width: 240px;
     text-align: center;
     border: none;
-    background: #2f2a3a;
-    
-    
-
+    background: ${(props) => props.theme.background};
 `
 export const Form = styled.form
 `
     input{
         height: 30px;
         width: 214px;
-        background: #2f2a3a;
+        background: ${(props) => props.theme.background};
         border: 0px;
-        color: #fff;
+        color: ${(props) => props.theme.color};
         text-align: right;
         font-size: 35px;
         font-weight: 500;
         letter-spacing: 1px;
         margin-top: 75px;
         margin-left: -10px;
-
         
     }
         input + input{
@@ -69,8 +61,8 @@ export const Button = styled.button
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    background: #2f2a3a;
-    color: #f1f1f1;
+    background: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.color};
 
 `
 
@@ -81,8 +73,8 @@ export const ButtonCol = styled.button
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    background: #2f2a3a;
-    color: #f1f1f1;
+    background: ${(props) => props.theme.background};
+    color: ${(props) => props.theme.color};
 
 `
 
@@ -92,7 +84,7 @@ export const ButtonBor = styled.button
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    background: #2f2a3a;
+    background: ${(props) => props.theme.background};
     color: #7d5dff;
 
 `
@@ -112,6 +104,5 @@ export const ButtonOpe = styled(Button)
     color: #000;
     width: 35px;
     height: 35px;
-
 
 `
